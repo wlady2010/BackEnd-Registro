@@ -1,0 +1,72 @@
+{
+  "name": "backend-services",
+  "version": "1.0.0",
+  "description": "Registro de datos de desarrolladores de software y las tecnologias que conocen",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build": "lb-tsc",
+    "build:watch": "lb-tsc --watch",
+    "clean": "lb-clean dist *.tsbuildinfo",
+    "lint": "npm run prettier:check && npm run eslint",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+    "pretest": "npm run clean && npm run build",
+    "posttest": "npm run lint",
+    "docker:build": "docker build -t backend-services .",
+    "docker:run": "docker run -p 3000:3000 -d backend-services",
+    "migrate": "node ./dist/migrate",
+    "prestart": "npm run build",
+    "start": "node -r source-map-support/register .",
+    "prepublishOnly": "npm run test"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "",
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^3.0.1",
+    "@loopback/context": "^3.11.1",
+    "@loopback/core": "^2.10.1",
+    "@loopback/openapi-v3": "^4.0.1",
+    "@loopback/repository": "^3.0.1",
+    "@loopback/rest": "^7.0.1",
+    "@loopback/rest-explorer": "^3.0.1",
+    "@loopback/service-proxy": "^3.0.1",
+    "loopback-connector-mongodb": "^5.4.0",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^6.2.4",
+    "source-map-support": "^0.5.19",
+    "@loopback/testlab": "^3.2.6",
+    "@types/node": "^10.17.35",
+    "@typescript-eslint/parser": "^2.31.0",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@loopback/eslint-config": "^10.0.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-eslint-plugin": "^2.2.1",
+    "eslint-plugin-mocha": "^7.0.0",
+    "typescript": "~4.0.2"
+  }
+}

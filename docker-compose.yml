@@ -1,0 +1,17 @@
+version: "3"
+services:
+  backend:
+    container_name: backend-registro
+    restart: always
+    build: .
+    ports:
+      - "3000:300"
+    links:
+      - "dbmongo"
+    volumes:
+      - .:/home/node/app
+  dbmongo:
+    container_name: mongodatabase
+    image: mongo
+    ports:
+      - "27017:27017"
