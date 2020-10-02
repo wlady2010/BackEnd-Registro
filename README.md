@@ -10,3 +10,22 @@ Tiene los servicios CRUD (get, post, delete, put)
 
 Esta Dockerizado 
 Esta expuesto en Heroku https://backend-registro.herokuapp.com/
+
+# Para correr localmente
+
+clone el repositorio https://github.com/wlady2010/BackEnd-Registro.git
+
+Debe tener instalado mongo en su maquina
+
+abri en terminal
+
+ubicaser en la carpeta  BackEnd-Registro
+
+escribir en la teminal npm install
+
+que instalara todas las dependencias de mi proyecto
+
+npm start
+
+para que suba nuestro proyecto al http://localhost:3000/
+
