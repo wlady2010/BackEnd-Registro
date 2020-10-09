@@ -8,8 +8,7 @@ Esta echo con Node Js y con el framework Loopback para la parte Back End y conec
 
 Tiene los servicios CRUD (get, post, delete, put)
 
-Esta Dockerizado 
-Esta expuesto en Heroku https://backend-registro.herokuapp.com/
+
 
 # Para correr localmente
 
